@@ -23,3 +23,10 @@ class Miscellaneous {
 	}
 
 }
+
+	private $Raiz;
+
+		public function getRaiz() { return $this->Raiz; }
+		public function setRaiz($valor) {
+			$this->Raiz = sqrt($valor);
+	}

@@ -129,4 +129,18 @@ class Miscellaneous {
 		public function setPotencia($Base,$Exp) {
 			$this->Potencia = pow ( number $Base , number $exp );
 	}
+}	
+		/** Matheus Mendes e Matheus Augusto, conversão para binário
+		 */
+	function dec_bin($decimal)
+{
+	$binario = "";
+	while($decimal != 0)
+    {
+    	$resto = $decimal % 2;
+    	$decimal = floor($decimal / 2);
+    	$binario = $resto.$binario;
+    }
+    	return $binario;
+}
 

@@ -121,4 +121,12 @@ class Miscellaneous {
 		Echo'Sua frase do dia é : .$frase ';
 	}
 }
+		/** Lucas e Luis, Potencia
+	          */ 
+		private $Potencia;
+
+		public function getPotencia() { return $this->Potencia; }
+		public function setPotencia($Base,$Exp) {
+			$this->Potencia = pow ( number $Base , number $exp );
+	}
 

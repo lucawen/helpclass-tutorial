@@ -21,13 +21,6 @@ class Miscellaneous {
 	public function gera ($limite){
 		return rand(0,$limite);
 	}
-	
-	/** Luca e Letícia
-	 * Raiz Quadrada */
-	 
-	public function raiz ($n){
-		return sqrt($n);
-	}
 	public function frase ($parametro){
 	  $data = date("j");
 	         /** Thalles e Thais, frase do dia
@@ -226,22 +219,88 @@ if ($_POST){
 ?>
 
 	}
-	/** Ian e Humberto, Próximo Número Primo
+?>
+	/** Mariana Oliveira, tabela ASCII 
 	*/
-	<?php
-    $max = 2147483647;
-    
-    $primesFound = 0;
-    $probablePrimes = 0;
+public function ascii ($letra) {
+	 $num = 0;
+		if ($letra = a)
+		$num = ord(a);
 
-    for ($x = 1; $x <= $max; $x++) {
-        $primeStatus = gmp_prob_prime($x);
-        if ($primeStatus == 1) {
-            $probablePrimes++;
-        } else if ($primeStatus == 2) {
-            $primesFound++;
-        }
-    }
-    echo "Total de primos encontrados: " . $primesFound . " entre 1 e " . $max . ". Primos prováveis nesse intervalo: " . $probablePrimes;
-?>
-?>
+		if ($letra = b)
+		$num = ord(b);
+
+		if ($letra = c)
+		$num = ord(c);
+
+		if ($letra = d)
+		$num = ord(d);
+
+		if ($letra = e)
+		$num = ord(e);
+
+		if ($letra = f)
+		$num = ord(f);
+
+		if ($letra = g)
+		$num = ord(g);
+
+		if ($letra = h)
+		$num = ord(h);
+
+		if ($letra = i)
+		$num = ord(i);
+
+		if ($letra = j)
+		$num = ord(j);
+
+		if ($letra = k)
+		$num = ord(k);
+
+		if ($letra = l)
+		$num = ord(l);
+
+		if ($letra = m)
+		$num = ord(m);
+
+		if ($letra = n)
+		$num = ord(n);
+
+		if ($letra = o)
+		$num = ord(o);
+
+		if ($letra = p)
+		$num = ord(p);
+
+		if ($letra = q)
+		$num = ord(q);
+
+		if ($letra = r)
+		$num = ord(r);
+
+		if ($letra = s)
+		$num = ord(s);
+
+		if ($letra = t)
+		$num = ord(t);
+
+		if ($letra = u)
+		$num = ord(u);
+
+		if ($letra = v)
+		$num = ord(v);
+
+		if ($letra = w)
+		$num = ord(w);
+
+		if ($letra = x)
+		$num = ord(x);
+
+		if ($letra = y)
+		$num = ord(y);
+
+		if ($letra = z)
+		$num = ord(z);
+
+	return 'A letra em ASCII é $num'; 
+}

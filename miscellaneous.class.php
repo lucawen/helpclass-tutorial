@@ -21,11 +21,15 @@ class Miscellaneous {
 	public function gera ($limite){
 		return rand(0,$limite);
 	}
+	
+	/** Luca e Letícia - Raiz */
+	public function raiz($n){
+		return sqrt($n);
+	}
+	
+	/** Thalles e Thais, frase do dia */ 
 	public function frase ($parametro){
 	  $data = date("j");
-	         /** Thalles e Thais, frase do dia
-	          */ 
-	  
 	  if ($data=1) 
 	    $frase=' “Hoje pode ser um dia excelente e maravilhoso, só depende de você” ';  
 	 
@@ -118,189 +122,163 @@ class Miscellaneous {
 	  
 	  if ($data=31) 
 		  $frase=' "Tudo é ousado para quem a nada se atreve" ';
-		Echo'Sua frase do dia é : .$frase ';
+	
+	return "Sua frase do dia é :".$frase ;
 	}
-}
-		/** Lucas e Luis, Potencia
-	          */ 
-		private $Potencia;
-
-		public function getPotencia() { return $this->Potencia; }
-		public function setPotencia($Base,$Exp) {
-			$this->Potencia = pow ( number $Base , number $exp );
+	
+	/** Matheus Mendes e Matheus Augusto, conversão para binário */
+	function dec_bin($decimal){
+		$binario = "";
+		while($decimal != 0){
+		    	$resto = $decimal % 2;
+		    	$decimal = floor($decimal / 2);
+		 	$binario = $resto.$binario;
+		}
+	    	return $binario;
 	}
-}	
-		/** Matheus Mendes e Matheus Augusto, conversão para binário
-		 */
-	function dec_bin($decimal)
-{
-	$binario = "";
-	while($decimal != 0)
-    {
-    	$resto = $decimal % 2;
-    	$decimal = floor($decimal / 2);
-    	$binario = $resto.$binario;
-    }
-    	return $binario;
-}
-
-//Aloisio e Augusto numeros primos
-public function numeros primos ($numero)
-<?php
-//exemplo com numero 10
-$numero = 10;
-
-if (gmp_prob_prime($numero)) {
-	print 'É primo';
-} else {
-	print 'Não é primo';
-}
-/**
+	
+	/** Lucas e Luis, Potencia */ 
+	private $Potencia;
+	public function getPotencia() { return $this->Potencia; }
+	public function setPotencia($Base,$Exp) {
+		$this->Potencia = pow ( number $Base , number $exp );
+	}
+	
+	/** Mariana Oliveira, tabela ASCII */
+	public function ascii ($letra) {
+		 $num = 0;
+		if ($letra = a)
+			$num = ord(a);
+		if ($letra = b)
+			$num = ord(b);
+		if ($letra = c)
+			$num = ord(c);
+		if ($letra = d)
+			$num = ord(d);
+		if ($letra = e)
+			$num = ord(e);
+		if ($letra = f)
+			$num = ord(f);
+		if ($letra = g)
+			$num = ord(g);
+		if ($letra = h)
+			$num = ord(h);
+		if ($letra = i)
+			$num = ord(i);
+		if ($letra = j)
+			$num = ord(j);
+		if ($letra = k)
+			$num = ord(k);
+		if ($letra = l)
+			$num = ord(l);
+		if ($letra = m)
+			$num = ord(m);
+		if ($letra = n)
+			$num = ord(n);
+		if ($letra = o)
+			$num = ord(o);
+		if ($letra = p)
+			$num = ord(p);
+		if ($letra = q)
+			$num = ord(q);
+		if ($letra = r)
+			$num = ord(r);
+		if ($letra = s)
+			$num = ord(s);
+		if ($letra = t)
+			$num = ord(t);
+		if ($letra = u)
+			$num = ord(u);
+		if ($letra = v)
+			$num = ord(v);
+		if ($letra = w)
+			$num = ord(w);
+		if ($letra = x)
+			$num = ord(x);
+		if ($letra = y)
+			$num = ord(y);
+		if ($letra = z)
+			$num = ord(z);
+		return $num; 
+	}
+	
+	//Aloisio e Augusto numeros primos
+	public function numeros_primos ($numero)
+		//exemplo com numero 10
+		$numero = 10;
+		if (gmp_prob_prime($numero)) {
+			return true;
+		} else {
+			return false;
+		}
+		
+	/**
 	 * Acha o próximo número perfeito
 	 *
 	 * @author Leandro Rosa e Leonardo Henrique
 	 * @return int
 	 */
 	public function proximoPerfeito($n) {
-		<?php
-function encontraProximoPrimo($aPartirDe){
-        $ePrimo = false;
-        $aPartirDe += 1;
-        while(!$ePrimo){
-                $resultado = false;
-                for ($i = 2; $i < $aPartirDe; $i++){
-                        if ($aPartirDe%$i == 0){
-                                $resultado = true;
-                                break;
-                        }
-                }
-                if ($resultado) $aPartirDe++;
-                else $ePrimo = true;
-        }
-        return $aPartirDe;
-}
-function encontraDivisores($number){
-        $fatores = array();
-        for ($i = 1; $i < $number; $i++){
-                if ($number%$i == 0){
-                        $fatores[] = $i;
-                }
-        }
-        return $fatores;
-}
-function fatora($number){ 
-        $fatores = array();
-        $fatores[] = 1;
-        $numeroPrimo = 2;
-        while($number != 1){
-                while ($number%$numeroPrimo == 0){
-                        $fatores[] = $numeroPrimo;
-                        $number = $number/$numeroPrimo;
-                }
-                $numeroPrimo = encontraProximoPrimo($numeroPrimo);
-        }
-       
-        return array_sum($fatores); 
-}
-?>
-<form action="" method="post">
-        Teste se o numero é perfeito : <input type="text" name="numero"/><br><input type="submit"/>
-</form>
-<?php
- 
-if ($_POST){
-        echo "<hr>";
-        $number = $_POST['numero'];
-        $fatores = array_sum(encontraDivisores($number));
-        if ($fatores == $number){
-                echo "O numero $number é perfeito.";
-        }
-}
-?>
-
+			<?php
+	function encontraProximoPrimo($aPartirDe){
+		$ePrimo = false;
+	        $aPartirDe += 1;
+	        while(!$ePrimo){
+	                $resultado = false;
+	                for ($i = 2; $i < $aPartirDe; $i++){
+	                        if ($aPartirDe%$i == 0){
+	                                $resultado = true;
+	                                break;
+	                        }
+	                }
+	                if ($resultado) $aPartirDe++;
+	                else $ePrimo = true;
+	        }
+	        return $aPartirDe;
 	}
-?>
-	/** Mariana Oliveira, tabela ASCII 
-	*/
-public function ascii ($letra) {
-	 $num = 0;
-		if ($letra = a)
-		$num = ord(a);
-
-		if ($letra = b)
-		$num = ord(b);
-
-		if ($letra = c)
-		$num = ord(c);
-
-		if ($letra = d)
-		$num = ord(d);
-
-		if ($letra = e)
-		$num = ord(e);
-
-		if ($letra = f)
-		$num = ord(f);
-
-		if ($letra = g)
-		$num = ord(g);
-
-		if ($letra = h)
-		$num = ord(h);
-
-		if ($letra = i)
-		$num = ord(i);
-
-		if ($letra = j)
-		$num = ord(j);
-
-		if ($letra = k)
-		$num = ord(k);
-
-		if ($letra = l)
-		$num = ord(l);
-
-		if ($letra = m)
-		$num = ord(m);
-
-		if ($letra = n)
-		$num = ord(n);
-
-		if ($letra = o)
-		$num = ord(o);
-
-		if ($letra = p)
-		$num = ord(p);
-
-		if ($letra = q)
-		$num = ord(q);
-
-		if ($letra = r)
-		$num = ord(r);
-
-		if ($letra = s)
-		$num = ord(s);
-
-		if ($letra = t)
-		$num = ord(t);
-
-		if ($letra = u)
-		$num = ord(u);
-
-		if ($letra = v)
-		$num = ord(v);
-
-		if ($letra = w)
-		$num = ord(w);
-
-		if ($letra = x)
-		$num = ord(x);
-
-		if ($letra = y)
-		$num = ord(y);
-
-		if ($letra = z)
-		$num = ord(z);
-
-	return 'A letra em ASCII é $num'; 
+	function encontraDivisores($number){
+	        $fatores = array();
+	        for ($i = 1; $i < $number; $i++){
+	                if ($number%$i == 0){
+	                        $fatores[] = $i;
+	                }
+	        }
+	        return $fatores;
+	}
+	function fatora($number){ 
+	        $fatores = array();
+	        $fatores[] = 1;
+	        $numeroPrimo = 2;
+	        while($number != 1){
+	                while ($number%$numeroPrimo == 0){
+	                        $fatores[] = $numeroPrimo;
+	                        $number = $number/$numeroPrimo;
+	                }
+	                $numeroPrimo = encontraProximoPrimo($numeroPrimo);
+	        }
+	       
+	        return array_sum($fatores); 
+	}
+	?>
+	<form action="" method="post">
+	        Teste se o numero é perfeito : <input type="text" name="numero"/><br><input type="submit"/>
+	</form>
+	<?php
+	 
+	if ($_POST){
+	        echo "<hr>";
+	        $number = $_POST['numero'];
+	        $fatores = array_sum(encontraDivisores($number));
+	        if ($fatores == $number){
+	                echo "O numero $number é perfeito.";
+	        }
+	}
+	?>
+	
+		}
+	?>
 }
+	
+
+
+

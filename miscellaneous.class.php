@@ -27,6 +27,18 @@ class Miscellaneous {
 		return sqrt($n);
 	}
 	
+
+        /** Nathália Caroline e Pedro Gonzaga */
+        public function decimal_octal ($octal){
+          $octal = 0;
+          while($octal != 0){
+          $resto = $decimal % 8;
+          $decimal = floor($decimal / 8);
+          $octal = $resto.$octal;
+       }
+          return $octal;
+   }
+
 	/** Thalles e Thais, frase do dia */ 
 	public function frase ($parametro){
 	  $data = date("j");
@@ -279,6 +291,5 @@ class Miscellaneous {
 	?>
 }
 	
-
 
 

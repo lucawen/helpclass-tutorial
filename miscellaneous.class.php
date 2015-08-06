@@ -21,6 +21,13 @@ class Miscellaneous {
 	public function gera ($limite){
 		return rand(0,$limite);
 	}
+	
+	/** Luca e Letícia
+	 * Raiz Quadrada */
+	 
+	public function raiz ($n){
+		return sqrt($n);
+	}
 	public function frase ($parametro){
 	  $data = date("j");
 	         /** Thalles e Thais, frase do dia

@@ -31,10 +31,10 @@ class Miscellaneous {
         /** Gabriel Fernandes */
          public function multiplo5 ($n) {
            $n = 0
-         if ($n mod 5 =0)
-          echo "O número digitado é múltiplo de 5";
-         else {
-          echo "O número digitado não é múltiplo de 5";  
+         if ($n mod 5 =0){
+          return "O número digitado é múltiplo de 5";
+         } else {
+          return "O número digitado não é múltiplo de 5";  
                }
           }
 
